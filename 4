@@ -1,0 +1,22 @@
+package sofware_test_4;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Program_4 {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\ISE2019\\eclipse-workspace\\software_test_4\\driver\\chromedriver.exe");
+		WebDriver d = new ChromeDriver();
+		d.get("https://gmail.com");
+		int link  = d.findElements(By.tagName("a")).size();
+		System.out.println("No. of Links : "+ link);
+		for(int i = 0;i < link; i++) {
+		
+			String r = d.findElements(By.tagName("a")).get(i).getText();
+			System.out.println(r);
+		}
+		
+	}
+
+}
