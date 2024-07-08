@@ -1,0 +1,27 @@
+package test_1;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class Program_1_2 {
+
+	
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ISE2019\\eclipse-workspace\\software_test_1\\driver\\chromedriver.exe");
+		WebDriver d = new ChromeDriver();
+		d.get("http://zero.webappsecurity.com/login.html");
+		WebElement txtbx_username = d.findElement(By.name("user_login"));
+		txtbx_username.sendKeys("username");
+		WebElement txtbx_password = d.findElement(By.name("user_password"));
+		txtbx_password.sendKeys("password");
+		d.findElement(By.xpath("//*[@id=\"login_form\"]/div[2]/input")).click();
+	}
+
+	private static void sendkeys(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+  
+}
