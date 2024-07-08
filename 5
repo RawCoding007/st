@@ -1,0 +1,44 @@
+package software_test_5;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+
+public class Program_5 {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\ISE2019\\eclipse-workspace\\software_test_4\\driver\\chromedriver.exe");
+		WebDriver d = new ChromeDriver();
+		d.get("C:\\Users\\ISE2019\\Desktop\\list.html");
+		WebElement dropdown = d.findElement(By.xpath("//select"));
+		Select s = new Select(dropdown);
+
+		List<WebElement>options = s.getOptions();
+		System.out.println("No. of Options :"+options.size() );
+
+	}
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <select name="" id="cars">
+       <option value="Volvo"></option>
+       <option value="Audi"></option>
+       <option value="Bugatti"></option>
+       <option value="Ferrari"></option>
+       <option value="Lamborgini"></option>
+
+   </select>
+</body>
+</html>
